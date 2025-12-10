@@ -1,0 +1,28 @@
+/* src/Css/Footer.css */
+.footer {
+  background-color: #1e1e1e;
+  color: #fff;
+  padding: 20px 40px;
+  text-align: center;
+  width: 100%;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons a {
+  color: #fff;
+  margin: 0 10px;
+  font-size: 1.4rem;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #0a66c2; /* LinkedIn blue or customize per platform */
+}

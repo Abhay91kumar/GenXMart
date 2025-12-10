@@ -1,0 +1,36 @@
+.address-form {
+  display: grid;
+  gap: 12px;
+  max-width: 400px;
+  margin: 20px 0;
+}
+
+.address-form input {
+  padding: 10px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+}
+
+.address-form input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.checkout-button {
+  margin-top: 20px;
+  padding: 12px 20px;
+  background-color: #28a745;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.checkout-button:hover {
+  background-color: #218838;
+}

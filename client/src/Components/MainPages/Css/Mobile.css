@@ -1,0 +1,168 @@
+/* Container for listing all mobile cards */
+.mobile-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+/* Individual mobile card styling */
+.mobile-card {
+  width: 300px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 16px;
+  margin: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+  background-color: #fff;
+  position: relative;
+}
+
+.mobile-card:hover {
+  transform: translateY(-5px);
+}
+
+.mobile-card input[type='checkbox'] {
+  position: absolute;
+  margin: 10px;
+  transform: scale(1.3);
+  cursor: pointer;
+}
+
+.mobile-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.mobile-box {
+  padding-top: 12px;
+}
+
+.mobile-box h2 {
+  font-size: 18px;
+  margin-bottom: 6px;
+  color: #333;
+  text-align: center;
+}
+
+.mobile-box span {
+  display: block;
+  font-weight: bold;
+  color: #007b55;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.mobile-box p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+/* Detail Page Styling */
+.details {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 40px auto;
+  max-width: 900px;
+  gap: 24px;
+  padding: 16px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.details-image {
+  max-width: 300px;
+  border-radius: 10px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.box_detail {
+  flex: 1;
+  padding: 8px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.row h2 {
+  font-size: 22px;
+  color: #333;
+}
+
+.row h6 {
+  color: #888;
+}
+
+.price {
+  font-size: 20px;
+  font-weight: bold;
+  color: #009688;
+  margin: 12px 0;
+}
+
+.description,
+.brand,
+.category {
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #555;
+}
+
+.specs {
+  margin: 16px 0;
+}
+
+.specs h4 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.specs ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.specs li {
+  margin-bottom: 6px;
+  color: #444;
+}
+
+.sold-count {
+  font-size: 13px;
+  color: #999;
+  margin-bottom: 12px;
+}
+
+.row_btn {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+#btn-add,
+#btn_buy {
+  padding: 10px 16px;
+  border: none;
+  background: #333;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+#btn-add:hover {
+  background: #4caf50;
+}
+
+#btn_buy:hover {
+  background: #2196f3;
+}

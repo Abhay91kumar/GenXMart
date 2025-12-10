@@ -1,0 +1,24 @@
+.success-container {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.success-container h2 {
+  font-size: 28px;
+  color: #28a745;
+}
+
+.success-container p {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.success-container .btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  display: inline-block;
+}

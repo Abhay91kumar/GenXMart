@@ -1,0 +1,50 @@
+.delete-container {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 30px;
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.delete-heading {
+  color: #d93025;
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.delete-summary p {
+  font-size: 16px;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.delete-summary ul {
+  list-style: none;
+  padding: 0;
+}
+
+.delete-summary li {
+  padding: 8px 0;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.delete-button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: #d93025;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  margin-top: 25px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.delete-button:hover {
+  background-color: #b0251d;
+}

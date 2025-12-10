@@ -1,0 +1,83 @@
+.order-history {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: 'Segoe UI', sans-serif;
+  overflow-wrap: break-word; 
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow: hidden;
+}
+
+.order-history h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+.order-card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  padding: 20px;
+  margin-bottom: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+}
+
+.order-card:hover {
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+
+.order-card h4 {
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.order-card p {
+  margin: 4px 0;
+  color: #555;
+}
+
+.order-card ul {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.order-card ul li {
+  margin-bottom: 6px;
+  list-style-type: disc;
+  color: #333;
+}
+
+.order-card h5 {
+  margin-top: 16px;
+  margin-bottom: 6px;
+  font-size: 16px;
+  color: #555;
+}
+
+.order-card hr {
+  margin-top: 20px;
+  border: none;
+  border-top: 1px solid #ccc;
+}
+
+@media (max-width: 600px) {
+  .order-card {
+    padding: 15px;
+  }
+
+  .order-history h2 {
+    font-size: 24px;
+  }
+
+  .order-card h4, .order-card h5 {
+    font-size: 16px;
+  }
+
+  .order-card p, .order-card li {
+    font-size: 14px;
+  }
+}
