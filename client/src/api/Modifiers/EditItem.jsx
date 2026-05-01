@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import EditItemForm from '../../Components/MainPages/Utils/EditItemForm'; 
+const server=process.env.REACT_APP_SERVER;
 
 const EditItem = () => {
     const { id } = useParams();
@@ -31,12 +32,12 @@ const EditItem = () => {
             const types = ['product', 'mobile', 'fashion'];
             for (const type of types) {
                 try {
-                    const res = await axios.get(`/api/${type}/${id}`);
+                    const res = await axios.get(`${server}/api/${type}/${id}`);
                     if (res.data) {
                         setItem(res.data);
                         setEndpointType(type);
                         const idField = res.data.product_id || res.data.mobile_id || res.data.fashion_id || '';
-
+                        
                         setFormData({
                             item_id: idField,
                             title: res.data.title || '',
@@ -73,7 +74,7 @@ const EditItem = () => {
         delete payload.item_id;
 
         try {
-            const res = await axios.put(`/api/${endpointType}/${id}`, payload);
+            const res = await axios.put(`${server}/api/${endpointType}/${id}`, payload);
             if (res.data) {
                 alert(`${endpointType} updated successfully`);
             }

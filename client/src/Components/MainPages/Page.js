@@ -5,7 +5,6 @@ import Home from './Product/Home'
 import Moblie from './Product/Mobile'
 import Fashion from './Product/Fashion';
 import Cart from './Cart/Cart'
-import Login from './Login/Login'
 import Register from './Login/Register';
 import DetailPage from './Utils/DetailPages/DetailPage';
 import EditItem from '../../api/Modifiers/EditItem';
@@ -15,6 +14,7 @@ import Checkout from '../MainPages/Checkout/Checkout'
 import SingleCheckout from './Checkout/SingleCheckout';
 import OrderHistory from './Utils/OrederHistory';
 import Success from './Checkout/Success';
+import Address from './Checkout/Address';
 
 const Page = () => {
   return (
@@ -26,7 +26,6 @@ const Page = () => {
       <Route path='/cart' element={<Cart />} />
       <Route path='/checkout' element={<Checkout />} />
       <Route path='/checkout/:id' element={<SingleCheckout />} />
-      <Route path='/login' element={<Login />} />
       <Route path='/register' element={<Register />} />
       <Route path="/detail/:id" element={<DetailPage />} />
       <Route path="/edit/:id" element={<EditItem />} />
@@ -34,6 +33,7 @@ const Page = () => {
       <Route path="/create_product" element={<CreateItem />} />
       <Route path='/history' element={<OrderHistory/>} />
       <Route path='/success' element={<Success/>} />
+      <Route path='/address' element={<Address/>} />
 
 
     </Routes>

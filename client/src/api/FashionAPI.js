@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+const server=process.env.REACT_APP_SERVER;
 
 const FashionAPI = () => {
 
@@ -7,7 +8,7 @@ const FashionAPI = () => {
 
     const getFashions = async () => {
         try {
-            const res = await axios.get('/api/fashion');
+            const res = await axios.get(`${server}/api/fashion`,{withCredentials:true});
             // console.log('Fashion:', res.data);
             setFashions(res.data.fashions); 
         } catch (err) {

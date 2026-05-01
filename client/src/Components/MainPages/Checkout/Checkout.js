@@ -1,83 +1,114 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { GlobalState } from '../../../GlobalState';
+import CheckoutUI from './CheckoutUI';
 import axios from 'axios';
 import { loadStripe } from '@stripe/stripe-js';
-import CheckoutUI from './CheckoutUI';
+
+const server = process.env.REACT_APP_SERVER;
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
 
 const Checkout = () => {
+
   const state = useContext(GlobalState);
   const [cart] = state.userAPI.cart;
-  const [user] = state.userAPI.user;
   const [token] = state.token;
-  console.log("Logged in user ID:", user.id);
-  const totalAmount = cart.reduce((sum, item) => sum + item.totalPrice, 0);
 
-  const [address, setAddress] = useState({
-    street: '',
-    city: '',
-    state: '',
-    zipcode: '',
-    country: ''
-  });
+  const [addresses, setAddresses] = useState([]);
+  const [selectedAddress, setSelectedAddress] = useState(null);
 
-  const handleChange = e => {
-    const { name, value } = e.target;
-    setAddress({ ...address, [name]: value });
-  };
+  const totalAmount = cart.reduce(
+    (sum, item) => sum + (item.price * item.quantity),
+    0
+  );
+
+  useEffect(() => {
+    const fetchAddress = async () => {
+      try {
+        const res = await axios.get(`${server}/api/address`, {
+          headers: { Authorization: token }
+        });
+
+        const data = res.data.addresses;
+        setAddresses(data);
+
+        const defaultAddr = data.find(a => a.isDefault);
+        setSelectedAddress(defaultAddr || data[0]);
+
+      } catch (err) {
+        console.log(err.response?.data || err.message);
+      }
+    };
+
+    if (token) fetchAddress();
+  }, [token]);
 
   const handlePayment = async () => {
-    if (Object.values(address).some(val => val.trim() === '')) {
-      return alert('Please fill in all address fields.');
+
+    if (!selectedAddress) {
+      return alert("Please select an address");
     }
 
     try {
-      const response = await axios.post('/api/payment', {
-        cartItems: cart,
-        address
-      }, {
-        headers: {
-          Authorization: token
+      const response = await axios.post(
+        `${server}/api/payment`,
+        {
+          cartItems: cart,
+          address: selectedAddress
+        },
+        {
+          headers: { Authorization: token }
         }
+      );
+
+      const sessionId = response.data?.id;
+
+      if (!sessionId) {
+        return alert("Payment session not created. Try again.");
+      }
+
+      const stripe = await stripePromise;
+
+      const { error } = await stripe.redirectToCheckout({
+        sessionId
       });
 
+      if (error) {
+        alert(error.message);
+      }
 
-      const sessionId = response.data.id;
-      const stripe = await stripePromise;
-      await stripe.redirectToCheckout({ sessionId });
     } catch (error) {
-      const errMsg = error.response?.data?.error || error.message;
-      alert(errMsg);
+      alert(error.response?.data?.msg || error.message);
     }
   };
 
-  const cartWithTotalPrice = cart.map(item => ({
-    ...item,
-    totalPrice: item.price * item.quantity,
-  }));
-return (
-  <div className="checkout-container">
+  return (
+    <div className="checkout-container">
+
       <h2>Checkout Summary</h2>
-      {cartWithTotalPrice.map((item, index) => (
+
+      {cart.map((item, index) => (
         <div className="checkout-item" key={index}>
           <img src={item.image?.url} alt={item.title} width="80" />
+
           <div className="checkout-detail">
             <h4>{item.title}</h4>
             <p>Qty: {item.quantity}</p>
-            <p>Total: ₹ {item.totalPrice}</p>
+            <p>Total: ₹ {item.price * item.quantity}</p>
           </div>
         </div>
       ))}
+
       <h3>Grand Total: ₹ {totalAmount}</h3>
-    <CheckoutUI
-      totalAmount={totalAmount}
-      address={address}
-      handleChange={handleChange}
-      handlePayment={handlePayment}
-    />
+
+      <CheckoutUI
+        addresses={addresses}
+        selectedAddress={selectedAddress}
+        setSelectedAddress={setSelectedAddress}
+        handlePayment={handlePayment}
+      />
+
     </div>
   );
-
 };
 
 export default Checkout;

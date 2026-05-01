@@ -1,83 +1,65 @@
 .order-history {
   max-width: 900px;
-  margin: 40px auto;
+  margin: auto;
   padding: 20px;
-  font-family: 'Segoe UI', sans-serif;
-  overflow-wrap: break-word; 
-  word-wrap: break-word;
-  word-break: break-word;
-  overflow: hidden;
 }
 
 .order-history h2 {
-  font-size: 28px;
-  margin-bottom: 20px;
-  color: #333;
   text-align: center;
+  margin-bottom: 20px;
+}
+
+.no-orders {
+  text-align: center;
+  color: gray;
 }
 
 .order-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
   background: #fff;
-  border: 1px solid #e0e0e0;
-  padding: 20px;
-  margin-bottom: 25px;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
-  transition: all 0.3s ease;
+  transition: 0.3s;
 }
 
 .order-card:hover {
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-.order-card h4 {
-  color: #444;
-  margin-bottom: 10px;
-}
-
-.order-card p {
-  margin: 4px 0;
-  color: #555;
-}
-
-.order-card ul {
-  padding-left: 20px;
-  margin: 0;
-}
-
-.order-card ul li {
-  margin-bottom: 6px;
-  list-style-type: disc;
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
   color: #333;
 }
 
-.order-card h5 {
-  margin-top: 16px;
-  margin-bottom: 6px;
-  font-size: 16px;
-  color: #555;
+.order-date {
+  font-size: 13px;
+  color: gray;
+  margin-bottom: 10px;
 }
 
-.order-card hr {
-  margin-top: 20px;
-  border: none;
-  border-top: 1px solid #ccc;
+.order-section {
+  margin-top: 10px;
 }
 
-@media (max-width: 600px) {
-  .order-card {
-    padding: 15px;
-  }
+.order-section h5 {
+  margin-bottom: 5px;
+  color: #444;
+}
 
-  .order-history h2 {
-    font-size: 24px;
-  }
+.order-section ul {
+  padding-left: 20px;
+}
 
-  .order-card h4, .order-card h5 {
-    font-size: 16px;
-  }
+.address-box {
+  background: #f9f9f9;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
 
-  .order-card p, .order-card li {
-    font-size: 14px;
-  }
+.address-box .name {
+  font-weight: bold;
 }

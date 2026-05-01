@@ -32,6 +32,7 @@ const userCtrl = {
 
             res.cookie('refreshtoken', refreshToken, {
                 httpOnly: true,
+                sameSite:'lax',
                 path: '/user/refresh_token'
             })
 
@@ -51,6 +52,7 @@ const userCtrl = {
                 if (err) return res.status(400).json({ msg: "Please Login or Register" })
                 const accesstoken = createAccessToken({ id: user.id })
                 res.json({ user, accesstoken })
+
             })
 
         } catch (err) {
@@ -71,6 +73,7 @@ const userCtrl = {
 
             res.cookie('refreshtoken', refreshtoken, {
                 httpOnly: true,
+                sameSite:'lax',
                 path: '/user/refresh_token'
             });
 

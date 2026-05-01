@@ -1,36 +1,82 @@
-.address-form {
-  display: grid;
-  gap: 12px;
-  max-width: 400px;
-  margin: 20px 0;
+/* Container */
+.checkout-section {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-.address-form input {
-  padding: 10px 12px;
-  font-size: 16px;
+/* Heading */
+.checkout-section h3 {
+  margin-bottom: 15px;
+  color: #333;
+  text-align: center;
+}
+
+/* Dropdown */
+.address-dropdown {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
   border: 1px solid #ccc;
-  border-radius: 8px;
-  transition: border-color 0.3s ease;
+  margin-bottom: 15px;
+  font-size: 14px;
 }
 
-.address-form input:focus {
-  border-color: #007bff;
-  outline: none;
+/* Address Card */
+.address-display {
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #eee;
+  margin-top: 10px;
+  transition: 0.3s;
 }
 
+.address-display:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.address-display h4 {
+  margin-bottom: 5px;
+  color: #222;
+}
+
+.address-display p {
+  margin: 3px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Link */
+.manage-link {
+  display: block;
+  margin: 15px 0;
+  text-align: right;
+  color: #007bff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.manage-link:hover {
+  text-decoration: underline;
+}
+
+/* Button */
 .checkout-button {
-  margin-top: 20px;
-  padding: 12px 20px;
-  background-color: #28a745;
+  width: 100%;
+  padding: 12px;
   border: none;
-  border-radius: 8px;
-  color: white;
+  background: linear-gradient(45deg, #28a745, #218838);
+  color: #fff;
   font-size: 16px;
-  font-weight: bold;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: 0.3s;
 }
 
 .checkout-button:hover {
-  background-color: #218838;
+  background: linear-gradient(45deg, #218838, #1e7e34);
 }

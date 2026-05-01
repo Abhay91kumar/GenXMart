@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+const server=process.env.REACT_APP_SERVER;
 
 const DeleteItem = () => {
     const { id } = useParams();
@@ -13,7 +14,7 @@ const DeleteItem = () => {
             const types = ['product', 'mobile', 'fashion'];
             for (const type of types) {
                 try {
-                    const res = await axios.get(`/api/${type}/${id}`);
+                    const res = await axios.get(`${server}/api/${type}/${id}`);
                     if (res.data) {
                         setItem(res.data);
                         setEndpointType(type);
@@ -34,7 +35,7 @@ const DeleteItem = () => {
         if (!confirmDelete) return;
 
         try {
-            await axios.delete(`/api/${endpointType}/${id}`);
+            await axios.delete(`${server}/api/${endpointType}/${id}`);
             alert(`${endpointType} deleted successfully`);
             navigate('/'); // or to admin/items page
         } catch (err) {

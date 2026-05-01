@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+const server=process.env.REACT_APP_SERVER;
 
 const MobileAPI = () => {
 
@@ -7,7 +8,7 @@ const MobileAPI = () => {
 
     const getMobiles = async () => {
         try {
-            const res = await axios.get('/api/mobile');
+            const res = await axios.get(`${server}/api/mobile`,{withCredentials:true});
             // console.log('Mobile:', res.data);
             setMobiles(res.data.mobiles); 
         } catch (err) {

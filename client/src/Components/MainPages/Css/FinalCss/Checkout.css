@@ -67,3 +67,32 @@ h3 {
 .checkout-button:hover {
   background-color: #0c7d47;
 }
+
+.address-select {
+  display: grid;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.address-box {
+  border: 1px solid #ccc;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.address-box.active {
+  border: 2px solid #2874f0;
+  background: #f0f6ff;
+}
+
+.pay-btn {
+  background: #2874f0;
+  color: white;
+  padding: 12px;
+  border: none;
+  width: 100%;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 15px;
+}

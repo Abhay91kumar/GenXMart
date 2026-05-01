@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import axios from 'axios';
+const server=process.env.REACT_APP_SERVER;
 
 const AdminDetail = () => {
   const location = useLocation();
@@ -12,7 +13,7 @@ const AdminDetail = () => {
     if (isAdminDashboard) {
       const fetchAdminData = async () => {
         try {
-          const res = await axios.get('/user/admin');
+          const res = await axios.get(`${server}/user/admin`);
           setAdmin(res.data);
         } catch (err) {
           console.error('Error fetching admin data:', err);

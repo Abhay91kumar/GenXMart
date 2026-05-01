@@ -1,6 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const cookiesParser=require('cookie-parser');
+const cookiesParser = require('cookie-parser');
 const cors = require('cors');
 const path = require('path');
 require('dotenv').config({ path: path.resolve(__dirname, '.env') });
@@ -11,7 +11,10 @@ const app = express();
 app.use(express.json());
 app.use(cookiesParser());
 
-
+app.use(cors({
+    origin: "http://localhost:3000",
+    credentials: true
+}));
 app.listen(Port, () => {
     console.log('Server is Running....')
 })
@@ -24,6 +27,7 @@ app.use('/api', require('./routes/categoryRouter'))
 app.use('/api', require('./routes/productRouter'))
 app.use('/api', require('./routes/mobileRouter'))
 app.use('/api', require('./routes/fashionRouter'))
+app.use('/api', require('./routes/addressRouter'));
 app.use('/api', require('./routes/uploadRouter'))
 
 //Connect MongoDB

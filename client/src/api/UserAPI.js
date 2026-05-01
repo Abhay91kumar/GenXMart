@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react'
 import { jwtDecode } from 'jwt-decode';
+const server=process.env.REACT_APP_SERVER;
 
 const UserAPI = (token) => {
     // console.log("Token ",token)
@@ -16,7 +17,7 @@ const UserAPI = (token) => {
         if (token) {
             const getUser = async () => {
                 try {
-                    const res = await axios.get('/user/information', {
+                    const res = await axios.get(`${server}/user/information`, {
                         headers: { Authorization: token }
                     })
                     setCart(res.data.cart);
@@ -41,7 +42,7 @@ const UserAPI = (token) => {
 
         const updateCartToBackend = async () => {
             if (token) {
-                await axios.patch('/user/addcart', { cart }, {
+                await axios.patch(`${server}/user/addcart`, { cart }, {
                     headers: { Authorization: token }
                 });
             }
@@ -51,7 +52,7 @@ const UserAPI = (token) => {
     }, [cart, token]);
 
     const addCart = async (product) => {
-        if (!isLogged) return alert('Please Login')
+        if (!isLogged) return window.location.href="/"
 
         const check = cart.every(item => {
             return item._id !== product._id
@@ -64,10 +65,9 @@ const UserAPI = (token) => {
     }
 
     const handleBuyNow = (product) => {
-        if (!isLogged) {
-            alert('Please Login');
-            return null; // signal not allowed
-        }}
+        if (!isLogged) 
+            return window.location.href="/";
+        }
 
         const removeFromCart = async (product) => {
             setCart(cart.filter(item => item._id !== product._id));
