@@ -32,7 +32,8 @@ const userCtrl = {
 
             res.cookie('refreshtoken', refreshToken, {
                 httpOnly: true,
-                sameSite:'lax',
+                secure: true,
+                sameSite: 'none',
                 path: '/user/refresh_token'
             })
 
@@ -73,7 +74,8 @@ const userCtrl = {
 
             res.cookie('refreshtoken', refreshtoken, {
                 httpOnly: true,
-                sameSite:'lax',
+                secure: true,
+                sameSite: 'none',
                 path: '/user/refresh_token'
             });
 
