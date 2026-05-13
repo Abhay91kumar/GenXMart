@@ -28,9 +28,11 @@ function Address() {
         }
     };
 
-    useEffect(() => {
-        if (token) fetchAddress();
-    }, [token]);
+   useEffect(() => {
+    if (token) {
+        fetchAddress();
+    }
+}, [token]);
 
     // ✅ DELETE FUNCTION
     const handleDelete = async (id) => {
