@@ -44,8 +44,8 @@ const paymentCtrl = {
           quantity: item.quantity,
         })),
         mode: "payment",
-        success_url: "http://localhost:3000/success",
-        cancel_url: "http://localhost:3000/cancel",
+        success_url: "https://e-commerce-2-zt8t.onrender.com/success",
+        cancel_url: "https://e-commerce-2-zt8t.onrender.com/cancel",
       });
 
       const payment = new Payment({
