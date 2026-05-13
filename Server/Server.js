@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(cookiesParser());
 
 app.use(cors({
-    origin: "http://localhost:3000",
+    origin: 'https://genxmart.netlify.app',
     credentials: true
 }));
 app.listen(Port, () => {
