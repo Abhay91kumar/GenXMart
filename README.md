@@ -35,5 +35,5 @@ dotenv, CORS, Cookie-Parser
 
 ⚙️ Setup Instructions
 1. Clone the Repository
-git clone https://github.com/yourusername/GenXMart.git
+git clone https://github.com/Abhay91Kumar/GenXMart.git
 cd GenXMart
