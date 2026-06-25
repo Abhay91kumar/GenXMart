@@ -1,39 +1,57 @@
-🛒 GenXMart
+# 🛒 GenXMart
 
-A full-stack E-Commerce web application built with React, Express.js, MongoDB, and Node.js. GenXMart allows users to browse products, add items to their cart, manage orders, and enjoy a seamless online shopping experience.
+A full-stack E-Commerce web application built with **React, Express.js, MongoDB, and Node.js**. GenXMart allows users to browse products, add items to their cart, manage orders, and enjoy a seamless online shopping experience.
 
-🚀 Live Demo
-Front-End (React App)
-🌐  https://genxmart.netlify.app
+---
 
-Back-End (Node.js/Express API)
-🌐 https://e-commerce-2-zt8t.onrender.com
+## 🚀 Live Demo
 
-🛠️ Tech Stack
+### Frontend (React App)
+🌐 Frontend URL: https://genxmart.netlify.app
 
-Front-End
-React,React Router
-Axios, Stripe (Payment Integration)
-Tailwind CSS / Custom CSS
-Back-End
-Node.js, Express.js
-MongoDB with Mongoose
-JWT Authentication
-dotenv, CORS, Cookie-Parser
+### Backend (Node.js/Express API)
+🌐 Backend URL: https://e-commerce-2-zt8t.onrender.com
 
-🔐 Features
+---
 
-✅ User Authentication (JWT)
-✅ Browse and Search Products
-✅ Product Categories and Filtering
-✅ Add to Cart Functionality
-✅ Secure Checkout Process
-✅ Order History Management
-✅ Admin Dashboard for Product Management
-✅ Responsive Design for Mobile and Desktop
+## 🛠️ Tech Stack
 
+### Frontend
+- React
+- React Router
+- Axios
+- Stripe Payment Gateway
+- Tailwind CSS / Custom CSS
 
-⚙️ Setup Instructions
-1. Clone the Repository
-git clone https://github.com/Abhay91Kumar/GenXMart.git
+### Backend
+- Node.js
+- Express.js
+- MongoDB & Mongoose
+- JWT Authentication
+- dotenv
+- CORS
+- Cookie Parser
+
+---
+
+## 🔐 Features
+
+- User Authentication (JWT)
+- Browse Products
+- Product Filtering & Search
+- Add to Cart
+- Secure Checkout
+- Order History
+- Admin Dashboard
+- Product Management
+- Responsive Design
+
+---
+
+## ⚙️ Setup Instructions
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/Abhay91kumar/GenXMart.git
 cd GenXMart
