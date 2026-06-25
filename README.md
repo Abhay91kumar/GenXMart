@@ -4,8 +4,7 @@ A full-stack E-Commerce web application built with React, Express.js, MongoDB, a
 
 🚀 Live Demo
 Front-End (React App)
-
-🌐 [Your Frontend Link Here]
+🌐  https://genxmart.netlify.app
 
 Back-End (Node.js/Express API)
 🌐 https://e-commerce-2-zt8t.onrender.com
