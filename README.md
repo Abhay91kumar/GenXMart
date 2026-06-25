@@ -10,6 +10,7 @@ Back-End (Node.js/Express API)
 🌐 https://e-commerce-2-zt8t.onrender.com
 
 🛠️ Tech Stack
+
 Front-End
 React,React Router
 Axios, Stripe (Payment Integration)
@@ -21,6 +22,7 @@ JWT Authentication
 dotenv, CORS, Cookie-Parser
 
 🔐 Features
+
 ✅ User Authentication (JWT)
 ✅ Browse and Search Products
 ✅ Product Categories and Filtering
